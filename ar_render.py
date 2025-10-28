@@ -6,16 +6,8 @@ This module implements a basic augmented‑reality object renderer.  Given a
 background photograph, a transparent object image (RGBA) and real‑world
 dimensions of the object, the code computes the appropriate size of the
 object in pixels and pastes it into the scene at a specified location on
-the ground plane.  The geometry is derived from the camera parameters
-specified in the assignment: a pinhole camera positioned above a flat
-ground plane with a known focal length and sensor size.  The object is
-assumed to be upright with its base resting on the ground plane, and its
-height is provided in metres.
+the ground plane. 
 
-The implementation follows the formulas used in the original notebook but
-wraps them into reusable functions with clearer names.  By adjusting the
-``CameraParams`` dataclass you can adapt the renderer to different
-cameras.
 """
 
 from __future__ import annotations
@@ -51,9 +43,7 @@ class CameraParams:
 
     ground_distance_mm : float, optional
         Nominal distance from the camera projection centre to the point
-        directly beneath the camera on the ground plane.  The original
-        notebook implicitly used a value of 2000 mm (2 m) to compute
-        distances along the ground.  Changing this value will change how
+        directly beneath the camera on the ground plane. Changing this value will change how
         quickly objects shrink with distance.  Default is 2000 mm.
     """
 
