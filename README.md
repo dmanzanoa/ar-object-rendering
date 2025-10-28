@@ -5,7 +5,7 @@ This project provides a simple augmented reality (AR) object renderer implemente
 ## Overview
 Given a background photograph, a transparent object image (with an alpha channel) and the object's real‑world height (in metres), the renderer computes the appropriate size of the object in pixels based on camera parameters (focal length, sensor size, camera height and distance to the ground). It then pastes the object onto the background at a specified ground‑plane location, handling alpha blending.
 
-The implementation follows the geometry described in the project brief from the COMP90086 assignment: the camera is 1.6 m above the ground, has a focal length of 15 mm, a 36×24 mm sensor, and looks straight ahead parallel to the ground plane【576728121702493†L37-L76】.
+The camera is 1.6 m above the ground, has a focal length of 15 mm, a 36×24 mm sensor, and looks straight ahead parallel to the ground plane
 
 ## Repository structure
 | File | Description |
@@ -42,8 +42,3 @@ The script will output images `render_0.png`, `render_1.png`, etc., with the obj
 ## Customising camera parameters
 The camera parameters are encapsulated in the `CameraParams` dataclass. You can adapt the renderer to other cameras by changing focal length, sensor size, camera height or ground distance. See `ar_render.py` for details.
 
-## Background
-This code originates from an assignment about augmented reality object rendering. The task required computing the scale of an object in an image given its real height and camera geometry, and rendering it at two different positions on the ground plane【576728121702493†L37-L76】. This repository generalises the solution into reusable Python modules with a clean command-line interface, making it suitable for portfolio presentation.
-
-## License
-This project is provided for educational and portfolio purposes.
